@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<pthread.h>
+
+float h;//altezza
+float b;//base
+
+//funzione per il calcolo del perimetro
+void *perimetro(void *argv){
+                float P;//Perimetro
+
+                //calcolo perimetro
+                P=(b+h)*2;
+
+                //output perimetro
+                printf("Perimetro= %.2f\n",P);
+}
+
+void *area(void *argv){
+                float A;//Area
+
+                //calcolo area
+                A=b*h;
+
+                //output area
+                printf("Area= %.2f\n",A);
+}
+main(){
+
+        float A;//Area
+        float P;//Perimetro
+        pthread_t t1;
+        pthread_t t2;
+
+        //input base
+        printf("Inserisci la base\n");
+        scanf("%f",&b);
+
+        //input altezza
+        printf("Inserisci l'altezza\n");
+        scanf("%f",&h);
+
+        pthread_create(&t1,NULL,&area,NULL);
+        pthread_create(&t1,NULL,&perimetro,NULL);
+
+        pthread_join(t1,NULL);
+        pthread_join(t2,NULL);
+        
+        getchar();
+       }

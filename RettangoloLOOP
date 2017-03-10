@@ -1,0 +1,43 @@
+package rettangololoop;
+
+import java.util.Scanner;
+/**
+ *
+ * @author Lorenzo Morlacco 4° INA
+ */
+public class RettangoloLOOP {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+       double Base;
+       double Altezza;
+       Rettangolo x;// oggetto classe Rettangolo
+       Finestra f;// oggetto classe Finestra
+      
+       
+       Scanner input = new Scanner(System.in);
+       
+       //input base
+       System.out.println("Inserire valore della base");
+       Base = input.nextDouble();
+       
+       //input altezza
+       System.out.println("Inserire valore dell'altezza");
+       Altezza = input.nextDouble();
+       
+       x = new Rettangolo(Base,Altezza);//creazione oggetto rettangolo
+       f = new Finestra();//creazione oggetto finestra
+       
+       f.setVisible(true);
+       f.testo.setText("Area= "+x.calcoloArea());
+       f.testo2.setText("Perimetro= "+x.calcoloPerimetro());
+       
+       
+      
+    }
+    
+}

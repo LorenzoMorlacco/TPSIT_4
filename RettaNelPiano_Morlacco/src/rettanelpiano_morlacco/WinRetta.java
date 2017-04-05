@@ -240,16 +240,33 @@ public class WinRetta extends javax.swing.JFrame {
     private void Verifica_puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Verifica_puntoActionPerformed
         // TODO add your handling code here:
         WinMessaggio w = new WinMessaggio();
+        w.setVisible(true);
+        w.setTitle("Verifica punto");
+        
+        String la = this.var_a.getText();
+        String lb = this.var_b.getText();
+        String lc = this.var_c.getText();
+        
+        
+        double a = Double.parseDouble(la);
+        double b = Double.parseDouble(lb);
+        double c = Double.parseDouble(lc);
+        
+        Retta t = new Retta(a,b,c);
+        
         String lx = this.x_punto.getText();
         String ly = this.y_punto.getText();
-        Retta rxy;
-        
         
         double x = Double.parseDouble(lx);
         double y = Double.parseDouble(ly);
         
-        
-        rxy = new Retta.appartiene(x,y);
+        if(t.appartiene(x,y) == true){
+            w.Mex.setText("Il punto appartiene alla retta");
+        }
+        else{
+            w.Mex.setText("Il punto non appartiene alla retta");
+        }
+       
         
         w.setTitle("Verifica punto");
         

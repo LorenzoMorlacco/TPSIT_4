@@ -18,6 +18,6 @@ public class Fattoriale extends Thread {
         for(cont=0;cont<i;cont++){// calcolo fattoriale
             this.n = this.n * (this.cont+1);
         }
-        System.out.println(""+this.n);//stampa del risultato
+        System.out.println("Sono il "+this.i+" e il mio fattoriale e' "+this.n);//stampa del risultato
     }
 }

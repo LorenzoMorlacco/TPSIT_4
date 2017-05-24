@@ -19,7 +19,7 @@ public class Fattor {
         
         while(n<cont){
             fat = new Fattoriale(n);//creazione oggetto
-            fat.run();// richiamo metodo run
+            fat.start();// richiamo metodo run
             n++;
         }       
     }
